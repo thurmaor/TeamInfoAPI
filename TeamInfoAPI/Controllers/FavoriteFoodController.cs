@@ -19,7 +19,7 @@ namespace TeamInfoAPI.Controllers
             _context = context;
         }
 
-        // GET: api/BreakfastFoods/{id?}
+        
         [HttpGet("{id?}")]
         public async Task<ActionResult<IEnumerable<FavoriteFood>>> GetBreakfastFoods(int? id)
         {
@@ -38,7 +38,7 @@ namespace TeamInfoAPI.Controllers
             return new List<FavoriteFood> { item };
         }
 
-        // POST: api/BreakfastFoods
+        
         [HttpPost]
         public async Task<ActionResult<FavoriteFood>> PostBreakfastFood(FavoriteFood breakfastFood)
         {
@@ -48,7 +48,7 @@ namespace TeamInfoAPI.Controllers
             return CreatedAtAction(nameof(GetBreakfastFoods), new { id = breakfastFood.Id }, breakfastFood);
         }
 
-        // PUT: api/BreakfastFoods/5
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBreakfastFood(int id, FavoriteFood breakfastFood)
         {
@@ -78,7 +78,7 @@ namespace TeamInfoAPI.Controllers
             return NoContent();
         }
 
-        // DELETE: api/BreakfastFoods/5
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBreakfastFood(int id)
         {

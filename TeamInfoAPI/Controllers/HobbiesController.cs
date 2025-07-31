@@ -16,7 +16,7 @@ namespace TeamInfoAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Hobbies or api/Hobbies/5
+        
         [HttpGet("{id?}")]
         public async Task<ActionResult<IEnumerable<Hobby>>> GetHobbies(int? id)
         {
@@ -35,7 +35,7 @@ namespace TeamInfoAPI.Controllers
             return new List<Hobby> { hobby };
         }
 
-        // POST: api/Hobbies
+        
         [HttpPost]
         public async Task<ActionResult<Hobby>> PostHobby(Hobby hobby)
         {
@@ -45,7 +45,7 @@ namespace TeamInfoAPI.Controllers
             return CreatedAtAction(nameof(GetHobbies), new { id = hobby.Id }, hobby);
         }
 
-        // PUT: api/Hobbies/5
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutHobby(int id, Hobby hobby)
         {
@@ -75,7 +75,7 @@ namespace TeamInfoAPI.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Hobbies/5
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHobby(int id)
         {

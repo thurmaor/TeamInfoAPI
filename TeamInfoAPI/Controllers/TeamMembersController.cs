@@ -20,13 +20,13 @@ namespace TeamInfoAPI.Controllers
             _context = context;
         }
 
-        // GET: api/TeamMembers/{id?}
+        
         [HttpGet("{id?}")]
         public async Task<ActionResult<IEnumerable<TeamMember>>> GetTeamMembers(int? id)
         {
             if (id == null || id == 0)
             {
-                // Return first 5 entries
+                
                 return await _context.TeamMembers.Take(5).ToListAsync();
             }
 
@@ -40,7 +40,7 @@ namespace TeamInfoAPI.Controllers
             return new List<TeamMember> { member };
         }
 
-        // POST: api/TeamMembers
+        
         [HttpPost]
         public async Task<ActionResult<TeamMember>> PostTeamMember(TeamMember teamMember)
         {
@@ -50,7 +50,7 @@ namespace TeamInfoAPI.Controllers
             return CreatedAtAction(nameof(GetTeamMembers), new { id = teamMember.Id }, teamMember);
         }
 
-        // PUT: api/TeamMembers/5
+       
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTeamMember(int id, TeamMember teamMember)
         {
@@ -80,7 +80,7 @@ namespace TeamInfoAPI.Controllers
             return NoContent();
         }
 
-        // DELETE: api/TeamMembers/5
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTeamMember(int id)
         {

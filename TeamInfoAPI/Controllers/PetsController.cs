@@ -19,7 +19,7 @@ namespace TeamInfoAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Pets or api/Pets/{id?}
+        
         [HttpGet("{id?}")]
         public async Task<ActionResult<IEnumerable<Pet>>> GetPets(int? id)
         {
@@ -38,7 +38,7 @@ namespace TeamInfoAPI.Controllers
             return new List<Pet> { pet };
         }
 
-        // POST: api/Pets
+        
         [HttpPost]
         public async Task<ActionResult<Pet>> PostPet(Pet pet)
         {
@@ -48,7 +48,7 @@ namespace TeamInfoAPI.Controllers
             return CreatedAtAction(nameof(GetPets), new { id = pet.Id }, pet);
         }
 
-        // PUT: api/Pets/5
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPet(int id, Pet pet)
         {
@@ -78,7 +78,7 @@ namespace TeamInfoAPI.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Pets/5
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePet(int id)
         {
