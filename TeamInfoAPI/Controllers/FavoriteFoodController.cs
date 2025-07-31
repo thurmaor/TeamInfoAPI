@@ -10,18 +10,18 @@ namespace TeamInfoAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BreakfastFoodsController : ControllerBase
+    public class FavoriteFoodController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public BreakfastFoodsController(AppDbContext context)
+        public FavoriteFoodController(AppDbContext context)
         {
             _context = context;
         }
 
         // GET: api/BreakfastFoods/{id?}
         [HttpGet("{id?}")]
-        public async Task<ActionResult<IEnumerable<BreakfastFood>>> GetBreakfastFoods(int? id)
+        public async Task<ActionResult<IEnumerable<FavoriteFood>>> GetBreakfastFoods(int? id)
         {
             if (id == null || id == 0)
             {
@@ -35,12 +35,12 @@ namespace TeamInfoAPI.Controllers
                 return NotFound();
             }
 
-            return new List<BreakfastFood> { item };
+            return new List<FavoriteFood> { item };
         }
 
         // POST: api/BreakfastFoods
         [HttpPost]
-        public async Task<ActionResult<BreakfastFood>> PostBreakfastFood(BreakfastFood breakfastFood)
+        public async Task<ActionResult<FavoriteFood>> PostBreakfastFood(FavoriteFood breakfastFood)
         {
             _context.BreakfastFoods.Add(breakfastFood);
             await _context.SaveChangesAsync();
@@ -50,7 +50,7 @@ namespace TeamInfoAPI.Controllers
 
         // PUT: api/BreakfastFoods/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBreakfastFood(int id, BreakfastFood breakfastFood)
+        public async Task<IActionResult> PutBreakfastFood(int id, FavoriteFood breakfastFood)
         {
             if (id != breakfastFood.Id)
             {

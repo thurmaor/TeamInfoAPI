@@ -9,7 +9,7 @@ namespace TeamInfoAPI.Data
 
         public DbSet<TeamMember> TeamMembers { get; set; }
         public DbSet<Hobby> Hobbies { get; set; }
-        public DbSet<BreakfastFood> BreakfastFoods { get; set; }
+        public DbSet<FavoriteFood> BreakfastFoods { get; set; }
         public DbSet<Pet> Pets { get; set; }
     }
 }
